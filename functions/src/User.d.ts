@@ -1,9 +1,17 @@
+interface User {
+  uid: string;
+  email: string;
+  displayName: string;
+  photoURL: string;
+  provider: string;
+}
+
+// ===== Kakao =====
 interface KakaoProperties {
   nickname: string;
   profile_image: string;
   thumbnail_image: string;
 }
-
 interface KaKaoAccount {
   profile_needs_agreement: boolean;
   profile: object;
@@ -25,13 +33,12 @@ interface KaKaoAccount {
     | "60~69";
   has_birthday: boolean;
   birthday_needs_agreement: boolean;
-  birthday: string;
-  birthday_type: string;
+  birthday: string; // 0701
+  birthday_type: string; // "SOLAR"
   has_gender: boolean;
   gender_needs_agreement: boolean;
   gender: "male" | "female";
 }
-
 interface KakaoUser {
   data: {
     id: number;
@@ -41,4 +48,23 @@ interface KakaoUser {
   };
 }
 
-export { KakaoUser };
+// ===== Naver =====
+interface NaverAccount {
+  nickname: string;
+  name: string;
+  email: string;
+  gender: "F" | "M" | "U";
+  age: string;
+  birthday: string; // MM-DD
+  profile_image: string;
+}
+
+interface NaverUser {
+  data: {
+    resultcode: string;
+    message: string;
+    response: NaverAccount;
+  };
+}
+
+export { User, KakaoUser, NaverUser };
