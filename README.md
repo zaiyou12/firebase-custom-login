@@ -13,6 +13,7 @@ Basic setup
 Project setup
 
 - Download service account json file from firebase console.
+- Specify the path of the json file in the `functions/credential.sh` file.
 - Specify the values in `functions/constant.ts`
   - databaseURL: firebase url. ex) `https://example.firebaseio.com`
   - region: firebase region. ex) `asia-northeast-3`
